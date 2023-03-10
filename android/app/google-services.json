@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "104514464614",
+    "project_id": "logistix-ffc31",
+    "storage_bucket": "logistix-ffc31.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104514464614:android:c9bba7dd19de1354e376a7",
+        "android_client_info": {
+          "package_name": "com.logistix.logistix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "104514464614-juvvjj6436sjrm8bqqf9pa107oue91hq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3Z_i38Pn0lAyS_3ZH7p0LvuTDeSikIlQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "104514464614-g19gc7bge1nikg1df4cpkm7m791lvdnq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "104514464614-5phugcaamkht4lshag200861v3utm3d5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.logistix.logistix"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
