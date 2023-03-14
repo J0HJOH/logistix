@@ -12,13 +12,15 @@ class AvailableRidersScreen extends StatefulWidget {
   final String location;
   final String destination;
 
-  final Parcel? parcel;
+  final String? description;
+  final String category;
 
   const AvailableRidersScreen({
     Key? key,
     required this.location,
     required this.destination,
-    required this.parcel
+    required this.description,
+    required this.category,
   }) : super(key: key);
 
   @override
@@ -81,7 +83,8 @@ class _AvailableRidersScreenState extends State<AvailableRidersScreen> {
              rider: riders[index],
              destination: widget.destination,
              location: widget.location,
-             parcel: widget.parcel
+             description: widget.description,
+               category: widget.category
            ),
          );
       }

@@ -12,12 +12,15 @@ class SendPackageScreen extends StatefulWidget {
   final Riders rider;
   final String location;
   final String destination;
-  final Parcel? parcel;
+  final String? description;
+  final String category;
+
   const SendPackageScreen({
     Key? key, required this.rider,
     required this.location,
     required this.destination,
-    required this.parcel,
+    required this.description,
+    required this.category,
   }) : super(key: key);
 
   @override
@@ -173,26 +176,29 @@ class _SendPackageScreenState extends State<SendPackageScreen> {
               ),
               child: ElevatedButton(
                 onPressed: (){
-                  widget.parcel?.itemNumber = int.parse(receiverNumber.text);
+                  // widget.parcel?.itemNumber = int.parse(receiverNumber.text);
 
-                 if(senderName!= null
-                     || receiverNumber!= null
-                     || receiverName!= null|| itemNumber != null){
+                 if(senderName.text != ''
+                     && receiverNumber.text != ''
+                     && receiverName.text != ''
+                     && itemNumber.text != ''){
                    debugPrint(widget.destination,);
                    debugPrint(widget.location);
-                   debugPrint(widget.parcel as String?);
-                   debugPrint(widget.rider as String?);
+                   debugPrint(itemNumber.text);
+                   // debugPrint("${widget.parcel?.itemNumber}");
 
                   Navigator.push(
                        context, MaterialPageRoute(
                      builder: (context) => SummaryScreen(
+                       itemNumber: int.parse(receiverNumber.text),
                        senderName: senderName.text,
                        recieverName: receiverName.text,
                        recieverNum: int.parse(receiverNumber.text),
                        destination: widget.destination,
-                       parcel: widget?.parcel,
+                       description: widget.description,
                        rider: widget.rider,
                        senderLocation: widget.location,
+                       category: widget.category
                      ),
                    )
                    );

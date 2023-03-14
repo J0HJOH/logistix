@@ -32,7 +32,8 @@ class _PackageDetailsPageState extends State<PackageDetailsPage> {
     'Goods', 'Documents','Groceries'
   ];
 
-  String? dropDownValue = null;
+  String? dropDownValue = 'Goods';
+
 
   @override
   Widget build(BuildContext context) {
@@ -243,12 +244,14 @@ class _PackageDetailsPageState extends State<PackageDetailsPage> {
                     myParcel?.packageDescription = packageController.text;
 
                     if(dropDownValue != null ){
+                      debugPrint('${myParcel?.packageDescription}');
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => SelectLocation(
                                 user: widget.user,
-                                myParcel: myParcel,
+                                description:packageController.text,
+                                category: dropDownValue!,
                               )
                           )
                       );

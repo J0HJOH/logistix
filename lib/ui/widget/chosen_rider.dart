@@ -9,13 +9,15 @@ class ChosenRider extends StatefulWidget {
   final Riders rider;
   final String location;
   final String destination;
-  final  Parcel? parcel;
+  final  String? description;
+  final String category;
 
   const ChosenRider({Key? key,
     required this.location,
     required this.destination,
     required this.rider,
-    required this.parcel,}) : super(key: key);
+    required this.description,
+    required this.category,}) : super(key: key);
 
   @override
   State<ChosenRider> createState() => _ChosenRiderState();
@@ -34,7 +36,8 @@ class _ChosenRiderState extends State<ChosenRider> {
                       rider: widget.rider,
                     location: widget.location,
                     destination: widget.destination,
-                    parcel: widget.parcel,
+                    description: widget.description,
+                    category: widget.category
                   )
               )
           );

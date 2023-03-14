@@ -84,7 +84,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 btnprefixIcon: Icons.location_on,
                 btnPressed: ()=> Navigator.push(
                     context, MaterialPageRoute(builder: (context)
-                => SelectLocation(user: widget.user, myParcel: null,))
+                => SelectLocation(user: widget.user,
+                  description: '',
+                  category: '',))
                 ),
               ),
 

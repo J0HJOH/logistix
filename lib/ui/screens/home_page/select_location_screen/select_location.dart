@@ -10,10 +10,12 @@ import '../../side_bar/side_bar_menu.dart';
 import '../riders/available_riders.dart';
 
 class SelectLocation extends StatefulWidget {
-  final Parcel? myParcel;
+  final String? description;
+  final String category;
   const SelectLocation({
     Key? key, required this.user,
-    required this.myParcel,
+    required this.description,
+    required this.category,
   }) : super(key: key);
 
   final User user;
@@ -156,16 +158,28 @@ class _SelectLocationState extends State<SelectLocation> {
       ),
       floatingActionButton: FloatingActionButton.extended(
           onPressed: (){
-            Navigator.push(context,
-                MaterialPageRoute(
-                    builder: (context)
-                    => AvailableRidersScreen(
-                      location: locationController.text,
-                      destination : destinationController.text,
-                      parcel: widget.myParcel
-                    )
-                )
-            );
+           if(widget.category != ''
+               && destinationController.text != ''
+           && locationController.text.isNotEmpty
+           ){
+             Navigator.push(context,
+                 MaterialPageRoute(
+                     builder: (context)
+                     => AvailableRidersScreen(
+                         location: locationController.text,
+                         destination : destinationController.text,
+                         description: widget.description,
+                         category: widget.category
+                     )
+                 )
+             );
+           }else{
+             const snackBar = SnackBar(content:
+             Text('Package Category hasn\'t been '
+                 'selected yet, or location is not known'));
+
+             ScaffoldMessenger.of(context).showSnackBar(snackBar);
+           }
           },
           label: Text('Connect to rider'),
         foregroundColor: Colors.white,
